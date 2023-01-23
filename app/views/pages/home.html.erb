@@ -1,0 +1,20 @@
+<h1>Welcome to Grillz!</h1>
+
+<% if @current_user.present? %>
+    <p>Welcome back user: <%= @current_user.email %></p>
+<% end %>
+
+<h2>Find your favorite grill nearby!</h2>
+
+<%= form_tag grills_path, :method => 'get' do %>
+    <%= label_tag :Model %>
+    <%= text_field_tag :name %>
+
+    <%= label_tag :location %>
+    <%= text_field_tag :location %>
+
+    <%= label_tag :date %>
+    <%= date_field_tag :date %>
+
+    <%= submit_tag 'Search' %>
+<% end %>

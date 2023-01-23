@@ -1,0 +1,13 @@
+<h1>Grillz</h1>
+
+<h2>List of Grillz:</h2>
+
+<p>
+    <ul>
+        <% @grills.each do |grill| %> 
+            <%= link_to grill.name, grill %>
+            
+
+        <% end %>
+    </ul>
+</p>

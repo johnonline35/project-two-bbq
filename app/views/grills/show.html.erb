@@ -1,0 +1,16 @@
+<h1><%= @grill.name %></h1>
+
+<%= image_tag @grill.image, :class => 'feature' if @grill.image.present? %>
+    <ul>
+        <li>Grill Model: <%= @grill.name %></li>
+        <li>Location: <%= @grill.location %></li>
+    </ul>
+    <p>
+        <div class="bookings">
+            <button>Book this grill</button>
+        </div>
+    </p>
+    <div class="controls">
+        <%= link_to 'Edit grill', edit_grill_path(@grill) %>
+        <%= link_to 'Delete grill', @grill, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    </div>
