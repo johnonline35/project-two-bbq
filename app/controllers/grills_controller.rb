@@ -2,8 +2,8 @@ class GrillsController < ApplicationController
   before_action :check_for_login
 
   def index
-    # @grills = Grill.where 'location ILIKE ? AND price_per_hour <= ?' , params[:location], params[:price_per_hour]
-    
+    @grills = Grill.where 'location ILIKE ? AND price_per_hour <= ?' , params[:location], params[:price_per_hour]
+    @grills = Grill.all unless @grills.any?
   end
 
   def new

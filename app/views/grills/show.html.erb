@@ -5,12 +5,26 @@
         <li>Grill Model: <%= @grill.name %></li>
         <li>Location: <%= @grill.location %></li>
     </ul>
-    <p>
-        <div class="bookings">
-            <button>Book this grill</button>
+<% if @current_user.bookings.any? { |b| b.grill_id == @grill.id } %>
+    <p>Your booking details are below:</p>
+    
+    <% @current_user.bookings.where(:grill_id => @grill.id).each do |booking| %>
+        <div class="controls">
+            Booking: <%= booking.date.strftime '%A, %B %e, %Y' unless booking.date.nil? %>
+            <%= link_to 'Edit booking', edit_booking_path(booking) %>
+            <%= link_to 'Delete booking', booking, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
         </div>
-    </p>
+<% end %>
+    
+    <% else %>
+        <p>
+            <%= button_to 'Book Grill', book_grill_path(@grill.id, :date => params[:date]) %>
+        </p>
+    <% end %>
+    
+    <p>
     <div class="controls">
         <%= link_to 'Edit grill', edit_grill_path(@grill) %>
         <%= link_to 'Delete grill', @grill, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     </div>
+    </p>
