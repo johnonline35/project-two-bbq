@@ -6,7 +6,10 @@
         <li>Location: <%= @grill.location %></li>
     </ul>
 <% if @current_user.bookings.any? { |b| b.grill_id == @grill.id } %>
-    <p>Your booking details are below:</p>
+    <p>
+        <%= button_to "Book Grill on #{ Date.parse(params[:date]).strftime '%A, %B %e, %Y' } for $#{ @grill.price_per_day } per day", book_grill_path(@grill.id, :date => params[:date]), :class => "btn btn-primary" if params[:date].present? %>
+    </p>
+    <p>Your existing booking details are below:</p>
     
     <% @current_user.bookings.where(:grill_id => @grill.id).each do |booking| %>
         <div class="controls">
@@ -18,7 +21,7 @@
     
     <% else %>
         <p>
-            <%= button_to 'Book Grill', book_grill_path(@grill.id, :date => params[:date]) %>
+            <%= button_to "Book Grill #{ Date.parse(params[:date]).strftime '%A, %B %e, %Y' } for $#{ @grill.price_per_day } per day", book_grill_path(@grill.id, :date => params[:date]), :class => "btn btn-primary" if params[:date].present? %>
         </p>
     <% end %>
     

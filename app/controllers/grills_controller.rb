@@ -2,7 +2,7 @@ class GrillsController < ApplicationController
   before_action :check_for_login
 
   def index
-    @grills = Grill.where 'location ILIKE ? AND price_per_hour <= ?' , params[:location], params[:price_per_hour]
+    @grills = Grill.near(params[:location])
     @grills = Grill.all unless @grills.any?
   end
 
@@ -41,6 +41,6 @@ class GrillsController < ApplicationController
 
   private
   def grill_params
-    params.require(:grill).permit(:name, :location, :image, :price_per_hour)
+    params.require(:grill).permit(:name, :location, :image, :price_per_day)
   end
 end

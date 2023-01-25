@@ -6,7 +6,7 @@
 
 <h2>Find your favorite grill nearby!</h2>
 
-<%= form_tag grills_path, :method => 'get' do %>
+<%= form_tag grills_path, :class => 'form-control', :method => 'get' do %>
     <%= label_tag :Model %>
     <%= text_field_tag :name %>
 

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'payments/index'
+  get 'payments/success'
+  get 'payments/canceled'
+  post '/create-checkout-session' => 'payments#create'
   root :to => 'pages#home'
   resources :users, :only => [:new, :create, :index]
 
