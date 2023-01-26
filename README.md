@@ -1,24 +1,30 @@
-# README
+# Grillz - Project Two
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Grillz is a booking engine for hiring and renting out a grill, written in Ruby (version 2.7.7).
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+Grillz allows an end user to sign up, create an account, and list a grill to rent out to anyone who is wanting to rent a grill. Grillz also allows users to rent other Grillz users products.
 
-* System dependencies
+Grillz offers geocode lat/long search to find a grill in a location close to where the user is searching, a direct integration into Stripe, and a simple CRUD system (using Postgresql) that allows an end user to create, edit, update and delete Grills, Users and Bookings.
 
-* Configuration
+## Getting Started
 
-* Database creation
+### Dependencies
 
-* Database initialization
+The program is written in Ruby (version 2.7.7) on Rails. There are several dependecies.
 
-* How to run the test suite
+* The following Gems are used: Bootstrap, Stripe, Ransack, JQuery, Geocoder, JSon, Sinatra
+* ex. Windows 10
 
-* Services (job queues, cache servers, search engines, etc.)
+## Authors
 
-* Deployment instructions
+Contributors names and contact info
 
-* ...
+John Childs-Eddy 
+https://github.com/johnonline35
+
+## Version History
+
+* 0.1
+    * Initial Release
