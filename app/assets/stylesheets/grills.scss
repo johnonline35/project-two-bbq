@@ -1,6 +1,10 @@
 // Place all the styles related to the Grills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    max-width: 960px;
+    margin: 0 auto;
+}
 .background {
     background-color: rgba(255, 255, 255, 1);
     margin-left: 150px;
@@ -27,4 +31,8 @@
     padding: 20px;
     max-width: 910px;
     border-radius: 0.5em;
+}
+
+.form-control {
+    max-width: 100%;
 }
