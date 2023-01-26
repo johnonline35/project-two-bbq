@@ -1,3 +1,5 @@
+<div class="left-margin">
+
 <h1><%= @grill.name %></h1>
 
 <%= image_tag @grill.image, :class => 'feature' if @grill.image.present? %>
@@ -31,3 +33,5 @@
         <%= link_to 'Delete grill', @grill, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     </div>
     </p>
+    </div>
+    </div>

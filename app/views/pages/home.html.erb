@@ -1,10 +1,12 @@
-<h1>Welcome to Grillz!</h1>
+<h1 class="headings">Welcome to Grillz!</h1>
 
-<% if @current_user.present? %>
-    <p>Welcome back user: <%= @current_user.email %></p>
-<% end %>
-
-<h2>Find your favorite grill nearby!</h2>
+<p>
+<h2 class="headings">Instantly book a grill near you</h2>
+</p>
+<div class="section-1-container section-container">
+    <div class="container">
+        <div class="row">
+            <div class="col section-1 section-description">
 
 <%= form_tag grills_path, :class => 'form-control', :method => 'get' do %>
     <%= label_tag :Model %>
@@ -16,5 +18,9 @@
     <%= label_tag :date %>
     <%= date_field_tag :date %>
 
-    <%= submit_tag 'Search' %>
+    <%= submit_tag 'Search', :class => "btn btn-outline-primary" %>
 <% end %>
+            </div>
+        </div>
+    </div>
+</div>

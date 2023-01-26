@@ -1,3 +1,30 @@
 // Place all the styles related to the Grills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.background {
+    background-color: rgba(255, 255, 255, 1);
+    margin-left: 150px;
+    max-width: 960px;
+    border-radius: 0.5em;
+    padding: 20px;
+}
+
+.feature {
+    max-height: 300px;
+}
+
+.left-margin {
+    margin-left: 190px;
+    background-color: white;
+    padding: 20px;
+    max-width: 910px;
+    border-radius: 0.5em;
+}
+
+.home-left-margin {
+    margin-left: 190px;
+    background-color: white;
+    padding: 20px;
+    max-width: 910px;
+    border-radius: 0.5em;
+}

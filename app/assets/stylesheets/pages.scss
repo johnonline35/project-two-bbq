@@ -1,8 +1,28 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
 body {
     background-image: url("https://www.etonline.com/sites/default/files/images/2022-06/Best%20Portable%20Grills%20in%202022%2016-9.jpg");
     background-position: cover;
     background-repeat: no-repeat;
 }
+
+.headings {
+    padding-left: 200px;
+}
+
+.form-container {
+    display: block;
+    text-align: center;
+    align-items: center;
+}
+
+.form-control {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+

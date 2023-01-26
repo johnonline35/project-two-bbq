@@ -1,13 +1,15 @@
-<h1>Grillz</h1>
+<div class="left-margin">
+    <h1>Grillz</h1>
 
-<h2>List of Grillz:</h2>
+    <h2>List of Grillz:</h2>
 
-<p>
-    <ul>
-        <% @grills.each do |grill| %> 
-            <p><%= link_to grill.name, grill_path(grill, :date => params[:date]) %></p>
-            
+    <p>
+        <ul>
+            <% @grills.each do |grill| %> 
+                <p><%= link_to grill.name, grill_path(grill, :date => params[:date]) %></p>
+                
 
-        <% end %>
-    </ul>
-</p>
+            <% end %>
+        </ul>
+    </p>
+</div>
