@@ -3,22 +3,25 @@ class BookingsController < ApplicationController
 
     def create
         booking = Booking.create :grill_id => params[:grill_id], :date => params[:date]
-        @current_user.bookings << booking # add current user and current grill to booking 
+        @current_user.bookings << booking # add booking to current user
         
+        # Gems required for Stripe:
         require 'json'
         require 'sinatra'
         require 'stripe'
         
+        # Stripe test api key - replace with real key in production:
         Stripe.api_key = 'sk_test_51J7vFZIkVCToqUoaPhdK0GphlcxtKeztY7VIkYurc9N8gd9qBHXW92nDN4iFDbvWSYmWRN9fTAQytEy9Wmym1JFt00oelC54nj'
 
+        # Stripe checkout session
         session = Stripe::Checkout::Session.create({
         line_items: [{
             price_data: {
             currency: 'usd',
             product_data: {
-                name: booking.grill.name,
+                name: booking.grill.name, # Pulls the name of Grill
             },
-            unit_amount: (booking.grill.price_per_day * 100).to_i,
+            unit_amount: (booking.grill.price_per_day * 100).to_i, # Pulls price of grill
             },
             quantity: 1,
         }],
